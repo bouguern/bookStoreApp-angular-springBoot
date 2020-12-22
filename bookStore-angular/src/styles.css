@@ -8,7 +8,7 @@ body, html{
 }
 
 .footer{
-    position: absolute;
+    position: relative;
     bottom: 10px;
     height: 60px;
 }

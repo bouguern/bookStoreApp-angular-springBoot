@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Category } from 'src/app/model/category';
 import { BookService } from 'src/app/services/book.service';
 
@@ -19,8 +19,13 @@ export class CategoryComponent implements OnInit {
 
   listBookCategories(){
     this.bookService.getBookCategories().subscribe(
-      data => this.categories = data
+      data => {
+        this.categories = data;
+        console.log(data);
+      }
     );
   }
+
+
 
 }

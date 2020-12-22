@@ -5,7 +5,7 @@ export interface GetResponseBooks {
     _embedded: {
         books: Book[];
       },
-      page: {
+    page: {
         //cureent page
         size: number,
         //total number of records in database

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Book } from 'src/app/model/book';
@@ -18,12 +18,6 @@ export class BookListComponent implements OnInit {
   currentCategoryId: number = 1;
   previousCategoryId: number = 1;
   searchMode: boolean = false;
-  
-  //properties for client side paging
-
-  //pageOfItems: Array<Book>;
-  //pageSize: number = 5;
-
   //new properties for server-side paging
   currentPage: number = 1;
   pageSize: number = 5;
@@ -44,12 +38,6 @@ export class BookListComponent implements OnInit {
       this.listBooks();
     })
   }
-
-  /*client side paging
-  pageClick(pageOfItems: Array<Book>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-  } */
 
   listBooks(){
     this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword');
@@ -83,9 +71,9 @@ export class BookListComponent implements OnInit {
     console.log('current page size', this.currentPage-1);
     
     this.bookService.getBooksPaginate(this.currentCategoryId, 
-                                        this.currentPage - 1, 
-                                        this.pageSize)
-                                        .subscribe(this.processResult());
+                                      this.currentPage - 1, 
+                                      this.pageSize)
+                                      .subscribe(this.processResult());
   }
 
   handleSearchBooks(){
@@ -110,6 +98,7 @@ export class BookListComponent implements OnInit {
       this.currentPage = data.page.number + 1;
       this.totalRecords = data.page.totalElements;
       this.pageSize = data.page.size;
+      console.log(data);
     }
   }
 
