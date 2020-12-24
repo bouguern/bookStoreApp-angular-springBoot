@@ -18,6 +18,8 @@ import { CartDetailsComponent } from './components/cart-details/cart-details.com
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CartDetailsComponent,
     CartStatusComponent,
     CheckoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

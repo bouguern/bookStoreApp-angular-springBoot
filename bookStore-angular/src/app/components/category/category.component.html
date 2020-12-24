@@ -1,7 +1,7 @@
 <div class="list-group list-group-flush">
     <a  *ngFor="let category of categories" 
     [routerLink]="'/category/'+category.id"
-    class="list-group-item d-flex justify-content-center align-items-center" 
+    class="list-group-item d-flex justify-content-center"
       routerLinkActive="bg-primary text-white font-weight-bold">
       {{category.categoryName}}
     </a>
